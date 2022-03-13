@@ -1,10 +1,17 @@
+
+import { Route, BrowserRouter as Router, Link, Routes } from 'react-router-dom';
+
 import { Home } from './pages/Home'
 import { NewRoom } from './pages/NewRoom';
-import { BrowserRouter, Route } from 'react-router-dom';
 
 export function App() {
   return (
-    <NewRoom />
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/rooms/new' element={<NewRoom />} />
+      </Routes>
+    </Router>
   );
 }
 
